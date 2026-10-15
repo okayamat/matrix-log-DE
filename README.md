@@ -1,6 +1,6 @@
 # matrix-log-DE
 
-MATLAB implementations and numerical data for matrix logarithm algorithms
+MATLAB implementations for matrix logarithm algorithms
 based on the double-exponential (DE) formula.
 
 ## Algorithms
