@@ -1,2 +1,2 @@
 # matrix-log-DE
-Matrix logarithm computation algorithm based on the double-exponential formula
+Matrix logarithm computation algorithms based on the double-exponential formula
