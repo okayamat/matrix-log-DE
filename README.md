@@ -5,11 +5,12 @@ based on the double-exponential (DE) formula.
 
 ## Algorithms
 
-- `OriginalAlg1.m` implements the DE-based matrix logarithm routine of
-  Tatsuoka et al. [1, 2].
-- `ImprovedAlg2.m` implements the norm-free algorithm proposed in the
-  accompanying paper.
-- `ImprovedAlg3.m` implements the algorithm that uses the paper's error bound
+- `OriginalAlg1.m` implements the DE formula-based algorithm of Tatsuoka et al.
+  [1, 2].
+- `ImprovedAlg2.m` implements the norm-free algorithm based on the DE formula
+  proposed in the accompanying paper.
+- `ImprovedAlg3.m` implements the error-bound-based algorithm, also based on
+  the DE formula, proposed in the accompanying paper; it uses the error bound
   to select the number of quadrature nodes.
 
 The improved algorithms are described in the accompanying paper. The routines
