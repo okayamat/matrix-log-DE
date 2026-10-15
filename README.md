@@ -53,6 +53,10 @@ experiment, and condition number.
 
 The numerical experiments were performed on a MacBook Air with an Apple M4
 chip and 24 GB of memory, running macOS Tahoe 26.6.2 and MATLAB R2024b.
+The maximum number of computational threads reported by MATLAB's
+`maxNumCompThreads` function was 10; this value was queried rather than
+explicitly set. Execution times were measured using
+MATLAB's `timeit` function.
 
 ## References
 
