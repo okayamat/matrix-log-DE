@@ -49,6 +49,11 @@ writes the elapsed time in seconds and the relative error in the matrix 2-norm.
 `En` supplied by `ImprovedAlg3.m`. Output filenames identify the algorithm,
 experiment, and condition number.
 
+## Computational environment
+
+The numerical experiments were performed on a MacBook Air with an Apple M4
+chip and 24 GB of memory, running macOS Tahoe 26.6.2 and MATLAB R2024b.
+
 ## References
 
 [1] F. Tatsuoka, T. Sogabe, Y. Miyatake, and S.-L. Zhang, “Algorithms for
