@@ -1,6 +1,6 @@
 clear all
 
-max_points = 512;
+max_points = 640;
 
 for m = 50*2.^(0:5)
   I = eye(m);
