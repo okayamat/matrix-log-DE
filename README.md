@@ -1,6 +1,6 @@
 # matrix-log-DE
 
-MATLAB implementations for matrix logarithm algorithms
+MATLAB implementations and numerical data for matrix logarithm algorithms
 based on the double-exponential (DE) formula.
 
 ## Algorithms
@@ -36,11 +36,9 @@ process matrix dimensions `m = 50, 100, 200, 400, 800, 1600` (the
 `ErrorBound.m` script uses `m = 50` only).
 
 Run the scripts in MATLAB with the current folder set to this directory.
-The required `Qdata.csv` files must be available in the corresponding
-numbered folders (`50`, `100`, `200`, `400`, `800`, and `1600`). These folders
-contain data for matrices of the corresponding sizes and are also used for
-output.
-Ensure these folders exist before running the scripts.
+Each matrix-size directory (`50`, `100`, `200`, `400`, `800`, and `1600`)
+contains its corresponding `Qdata.csv` input file and is also used for output.
+`ErrorBound.m` uses only the `50` directory.
 
 Each output file contains two columns. `PointError.m` writes the number of
 quadrature nodes and the relative error in the matrix 2-norm. `TimeError.m`
@@ -60,12 +58,12 @@ MATLAB's `timeit` function.
 
 ## References
 
-[1] F. Tatsuoka, T. Sogabe, Y. Miyatake, and S.-L. Zhang, “Algorithms for
-the Computation of the Matrix Logarithm Based on the Double Exponential
-Formula,” *Journal of Computational and Applied Mathematics*, vol. 373,
+[1] F. Tatsuoka, T. Sogabe, Y. Miyatake, and S.-L. Zhang, "Algorithms for
+the computation of the matrix logarithm based on the double exponential
+formula," *Journal of Computational and Applied Mathematics*, vol. 373,
 article 112396, 2020.
 
-[2] F. Tatsuoka, T. Sogabe, T. Kemmochi, and S.-L. Zhang, “On the
-Convergence Rate of the Double-Exponential Formula for the Computation of
-the Matrix Logarithm,” *RIMS Kōkyūroku*, vol. 2167, pp. 1--9,
+[2] F. Tatsuoka, T. Sogabe, T. Kemmochi, and S.-L. Zhang, "On the
+convergence rate of the double-exponential formula for the computation of
+the matrix logarithm," *RIMS Kôkyûroku*, vol. 2167, pp. 1--9,
 2020 (in Japanese).
