@@ -12,11 +12,9 @@ based on the double-exponential (DE) formula.
 - `ImprovedAlg3.m` implements an error-bound-based algorithm for the same
   problem; it uses the bound to select the number of quadrature nodes.
 
-The latter two algorithms are described and analyzed in our accompanying
-paper on the double-exponential formula for computing the matrix logarithm
-[3]. The routines
-accept a matrix `A` and its dimension `m`; see each function signature for the
-remaining inputs and returned values.
+The latter two algorithms are described and analyzed in th accompanying
+paper [3]. The routines accept a matrix `A` and its dimension `m`; see each
+function signature for the remaining inputs and returned values.
 
 ## Numerical experiments
 
