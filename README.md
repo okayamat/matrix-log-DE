@@ -5,15 +5,16 @@ based on the double-exponential (DE) formula.
 
 ## Algorithms
 
-- `OriginalAlg1.m` implements the DE formula-based algorithm of Tatsuoka et al.
-  [1, 2].
-- `ImprovedAlg2.m` implements the norm-free algorithm based on the DE formula
-  proposed in the accompanying paper.
-- `ImprovedAlg3.m` implements the error-bound-based algorithm, also based on
-  the DE formula, proposed in the accompanying paper; it uses the error bound
-  to select the number of quadrature nodes.
+- `OriginalAlg1.m` implements the DE formula-based matrix logarithm
+  algorithm developed by Tatsuoka et al. [1, 2].
+- `ImprovedAlg2.m` implements a norm-free adaptive algorithm for computing the
+  matrix logarithm with the DE formula.
+- `ImprovedAlg3.m` implements an error-bound-based algorithm for the same
+  problem; it uses the bound to select the number of quadrature nodes.
 
-The improved algorithms are described in the accompanying paper. The routines
+The latter two algorithms are described and analyzed in our accompanying
+paper on the double-exponential formula for computing the matrix logarithm
+[3]. The routines
 accept a matrix `A` and its dimension `m`; see each function signature for the
 remaining inputs and returned values.
 
@@ -67,3 +68,6 @@ article 112396, 2020.
 convergence rate of the double-exponential formula for the computation of
 the matrix logarithm," *RIMS Kôkyûroku*, vol. 2167, pp. 1--9,
 2020 (in Japanese).
+
+[3] T. Okayama and T. Setogawa, "Improved algorithms for computing the matrix
+logarithm based on the double-exponential formula," arXiv:2610.25361, 2026.
