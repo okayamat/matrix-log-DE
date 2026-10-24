@@ -2,7 +2,7 @@ clear all
 
 max_points = 5*2.^(0:7);
 
-for m = [50 50]
+for m = 50*2.^(0:5)
   I = eye(m);
   dataname = sprintf('%d/Qdata.csv', m);
   Q = readmatrix(dataname);
