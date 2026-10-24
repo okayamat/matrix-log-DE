@@ -24,6 +24,8 @@ The following scripts run experiments and write tab-delimited `.dat` files:
   number of quadrature nodes varies.
 - `TimeError.m` records execution times and relative errors for the three
   algorithms as the maximum number of nodes varies.
+- `StopTime/StopTime.sh` extracts the elapsed time from the last row of
+  each `TimeError` data file and generates the stopping-time data files.
 - `ErrorBound.m` records the error bound returned by `ImprovedAlg3.m` for
   several maximum node counts.
 
