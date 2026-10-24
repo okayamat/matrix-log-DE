@@ -24,7 +24,7 @@ m = 50;
       warning_state = warning('query', 'ImprovedAlg3:MaxNodes');
       warning('off', 'ImprovedAlg3:MaxNodes');
       warning_cleanup = onCleanup(@() warning(warning_state.state, warning_state.identifier));
-      [M, Sn, En] = ImprovedAlg3(A, m, nmax, erel);
+      [M, Sn, En] = ImprovedAlg3(A, nmax, erel);
       clear warning_cleanup;
       M_history(i) = M;
       err_history(i) = En;

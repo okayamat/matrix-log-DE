@@ -1,4 +1,5 @@
-function [M_history, S_history] = OriginalAlg1(A, m, n0, max_points, eps, tau)
+function [M_history, S_history] = OriginalAlg1(A, n0, max_points, eps, tau)
+    m = length(A);
     I = eye(m);
 
     mu    = norm(A-I,2);

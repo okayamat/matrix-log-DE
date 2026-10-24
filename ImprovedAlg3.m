@@ -1,9 +1,11 @@
-function [M, Sn, En] = ImprovedAlg3(A, m, max_points, erel)
+function [M, Sn, En] = ImprovedAlg3(A, max_points, erel)
+    m = length(A);
     I = eye(m);
 
-    lambdaMax = norm(A, 2);
-    lambdaMin = norm(A\I, 2);
-    L = max(log(lambdaMax),log(lambdaMin));
+    lambda = eig(A);
+    lambdaMin = min(lambda);
+    lambdaMax = max(lambda);
+    L = max(-log(lambdaMin), log(lambdaMax));
     d = acos(sqrt(2/(1 + sqrt(1 + (2*pi/L)^2))));
     q = 0.95;
     y = q*d;
@@ -12,7 +14,7 @@ function [M, Sn, En] = ImprovedAlg3(A, m, max_points, erel)
     t = T / (1 + sqrt(T));
     a = (pi/2)*sin(y) * sqrt(1 + (sinh(x) + 2*t/(pi*cos(y)))^2);
     g = cos((pi/2)*sin(y))*cos(a)*cos(y);
-alpha = 2*pi*y;
+    alpha = 2*pi*y;
     C = 2*(exp(2*q*cos(d)) + 1/g);
     nreq = max(1, ceil(log1p(C/erel) / alpha));
 

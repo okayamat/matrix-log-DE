@@ -2,7 +2,7 @@ clear all
 
 max_points = 5*2.^(0:7);
 
-for m = 50*2.^(0:5)
+for m = [50 50]
   I = eye(m);
   dataname = sprintf('%d/Qdata.csv', m);
   Q = readmatrix(dataname);
@@ -26,9 +26,9 @@ for m = 50*2.^(0:5)
       warning_state = warning('query', 'OriginalAlg1:MaxNodes');
       warning('off', 'OriginalAlg1:MaxNodes');
       warning_cleanup = onCleanup(@() warning(warning_state.state, warning_state.identifier));
-      t = timeit(@() OriginalAlg1(A, m, n0, nmax, eps, tau));
+      t = timeit(@() OriginalAlg1(A, n0, nmax, eps, tau));
       time_history(i) = t;
-      [M_history, S_history] = OriginalAlg1(A, m, n0, nmax, eps, tau);
+      [M_history, S_history] = OriginalAlg1(A, n0, nmax, eps, tau);
       clear warning_cleanup;
       err_history(i) = norm(logA - S_history{end}, 2) / logA2norm;
     end
@@ -49,9 +49,9 @@ for m = 50*2.^(0:5)
       warning_state = warning('query', 'ImprovedAlg2:MaxNodes');
       warning('off', 'ImprovedAlg2:MaxNodes');
       warning_cleanup = onCleanup(@() warning(warning_state.state, warning_state.identifier));
-      t = timeit(@() ImprovedAlg2(A, m, nmax, eabs, erel));
+      t = timeit(@() ImprovedAlg2(A, nmax, eabs, erel));
       time_history(i) = t;
-      [M_history, S_history] = ImprovedAlg2(A, m, nmax, eabs, erel);
+      [M_history, S_history] = ImprovedAlg2(A, nmax, eabs, erel);
       clear warning_cleanup;
       err_history(i) = norm(logA - S_history{end}, 2) / logA2norm;
     end
@@ -69,9 +69,9 @@ for m = 50*2.^(0:5)
       warning_state = warning('query', 'ImprovedAlg3:MaxNodes');
       warning('off', 'ImprovedAlg3:MaxNodes');
       warning_cleanup = onCleanup(@() warning(warning_state.state, warning_state.identifier));
-      t = timeit(@() ImprovedAlg3(A, m, nmax, erel));
+      t = timeit(@() ImprovedAlg3(A, nmax, erel));
       time_history(i) = t;
-      [M, Sn, En] = ImprovedAlg3(A, m, nmax, erel);
+      [M, Sn, En] = ImprovedAlg3(A, nmax, erel);
       clear warning_cleanup;
       err_history(i) = norm(logA - Sn, 2) / logA2norm;
     end

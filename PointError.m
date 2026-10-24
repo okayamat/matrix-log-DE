@@ -19,7 +19,7 @@ for m = 50*2.^(0:5)
     tau = 10^(-11);
     n0  = 2;
 
-    [M_history, S_history] = OriginalAlg1(A, m, n0, max_points, eps, tau);
+    [M_history, S_history] = OriginalAlg1(A, n0, max_points, eps, tau);
 
     err_history = zeros(numel(S_history), 1);
     for k = 1:numel(S_history)
@@ -35,7 +35,7 @@ for m = 50*2.^(0:5)
     eabs = 10^(-13);
     erel = 10^(-11);
 
-    [M_history, S_history] = ImprovedAlg2(A, m, max_points, eabs, erel);
+    [M_history, S_history] = ImprovedAlg2(A, max_points, eabs, erel);
 
     err_history = zeros(numel(S_history), 1);
     for k = 1:numel(S_history)
@@ -51,7 +51,7 @@ for m = 50*2.^(0:5)
     eabs = 10^(-13);
     erel = 10^(-11);
 
-    [M, Sn, En] = ImprovedAlg3(A, m, max_points, erel);
+    [M, Sn, En] = ImprovedAlg3(A, max_points, erel);
 
     err_history = norm(logA - Sn, 2) / logA2norm;
 

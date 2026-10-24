@@ -1,4 +1,5 @@
-function [M_history, S_history] = ImprovedAlg2(A, m, max_points, eabs, erel)
+function [M_history, S_history] = ImprovedAlg2(A, max_points, eabs, erel)
+    m = length(A);
     I = eye(m);
 
     n = 1;
