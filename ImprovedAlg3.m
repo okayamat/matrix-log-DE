@@ -2,10 +2,9 @@ function [M, Sn, En] = ImprovedAlg3(A, max_points, erel)
     m = length(A);
     I = eye(m);
 
-    lambda = eig(A);
-    lambdaMin = min(lambda);
-    lambdaMax = max(lambda);
-    L = max(-log(lambdaMin), log(lambdaMax));
+    lambdaMax = norm(A, 2);
+    lambdaMinInv = norm(A\I, 2);
+    L = max(log(lambdaMax),log(lambdaMinInv));
     d = acos(sqrt(2/(1 + sqrt(1 + (2*pi/L)^2))));
     q = 0.95;
     y = q*d;
